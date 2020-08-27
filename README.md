@@ -1,5 +1,7 @@
 # Movie app
 
+![](./public/movie-app.gif)
+
 ## Local development
 
 - Run `yarn`
@@ -10,4 +12,4 @@
 - Run `yarn build`
 - Run `yarn start`
 
-![](./public/movie-app.gif)
+
