@@ -1,1 +1,11 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# Movie app
+
+## Local development
+
+- Run `yarn`
+- Run webapp dev server: `yarn run dev`
+
+## Build app locally to test production:
+
+- Run `yarn build`
+- Run `yarn start`
