@@ -1,7 +1,7 @@
 import { MovieSearchResult } from "../types";
 
 export default class OMBDService {
-  static API_KEY = "df69bc7f";
+  static API_KEY = process.env.API_KEY;
   static BASE_URL = `http://www.omdbapi.com/`;
 
   static fetchMovie = (query: string): Promise<MovieSearchResult> =>
