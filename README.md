@@ -10,4 +10,4 @@
 - Run `yarn build`
 - Run `yarn start`
 
-![](https://drive.google.com/file/d/1qVbHXeOFlxv8zW1pwnS-pxz_RLaiool-/view?usp=sharing)
+![](./public/movie-app.gif)
