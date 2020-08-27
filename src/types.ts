@@ -13,6 +13,10 @@ export type MovieSearchResult = {
   Search?: MovieResult[];
 };
 
+export type WikipediaPost = {
+  extract: string;
+};
+
 export interface Movie extends MovieResult {
   Actors?: string;
   Awards?: string;
@@ -33,7 +37,5 @@ export interface Movie extends MovieResult {
   Writer?: string;
   imdbRating?: string;
   imdbVotes?: string;
-  wikipedia?: {
-    extract: string;
-  };
+  wikipedia?: WikipediaPost;
 }

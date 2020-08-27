@@ -1,4 +1,4 @@
-import { MovieSearchResult } from "../types";
+import { MovieSearchResult, Movie } from "../types";
 
 export default class OMBDService {
   static API_KEY = process.env.API_KEY;
@@ -18,7 +18,7 @@ export default class OMBDService {
         .catch(reject)
     );
 
-  static fetchMovieDetails = (movieId: string): Promise<any> =>
+  static fetchMovieDetails = (movieId: string): Promise<Movie> =>
     new Promise((resolve, reject) =>
       fetch(
         `${OMBDService.BASE_URL}?i=${movieId}&apikey=${OMBDService.API_KEY}`
