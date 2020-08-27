@@ -9,3 +9,5 @@
 
 - Run `yarn build`
 - Run `yarn start`
+
+![](./public/movie-app.gif)
