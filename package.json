@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "codegen": "apollo client:codegen  --target=typescript"
+    "codegen": "apollo client:codegen  --target=typescript",
+    "postbuild": "next-on-netlify"
   },
   "dependencies": {
     "@apollo/client": "^3.2.7",
