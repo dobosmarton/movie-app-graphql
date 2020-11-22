@@ -1,6 +1,6 @@
 # Movie app
 
-![](./public/movie-app.gif)
+[Demo](https://movie-app-tmdb.netlify.app/)
 
 ## Local development
 
