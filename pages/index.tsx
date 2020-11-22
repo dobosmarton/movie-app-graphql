@@ -2,7 +2,7 @@ import React from "react";
 import Box from "@material-ui/core/Box";
 import Layout from "../src/components/Layout";
 import SearchInput from "../src/components/SearchInput";
-import MovieList from "../src/components/MovieList";
+import MediaList from "../src/components/MediaList";
 
 export default function Index() {
   return (
@@ -11,7 +11,7 @@ export default function Index() {
         <Box my={4}>
           <SearchInput />
 
-          <MovieList />
+          <MediaList />
         </Box>
       </div>
     </Layout>

@@ -4,10 +4,15 @@ import { AppProps } from "next/app";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-import { MoviesProvider } from "../src/context/MoviesProvider";
+import { MediaProvider } from "../src/context/MediaProvider";
 import theme from "../src/theme";
+import { ApolloProvider } from '@apollo/client';
+import { useApollo } from '../src/hooks/useApollo';
+
 
 export default function App({ Component, pageProps }: AppProps) {
+  const apolloClient = useApollo(pageProps.initialApolloState);
+  
   React.useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector("#jss-server-side");
@@ -28,9 +33,11 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <MoviesProvider>
-          <Component {...pageProps} />
-        </MoviesProvider>
+        <ApolloProvider client={apolloClient}>
+          <MediaProvider>
+            <Component {...pageProps} />
+          </MediaProvider>
+        </ApolloProvider>
       </ThemeProvider>
     </React.Fragment>
   );

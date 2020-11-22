@@ -1,11 +1,11 @@
-import React, { useRef, useCallback, useContext } from "react";
+import React, { useRef, useContext, MouseEvent } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import InputBase from "@material-ui/core/InputBase";
 import IconButton from "@material-ui/core/IconButton";
 import SearchIcon from "@material-ui/icons/Search";
 
-import { MoviesContext } from "../context/MoviesProvider";
+import { MediaContext } from "../context/MediaProvider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,23 +27,20 @@ const useStyles = makeStyles((theme) => ({
 const SearchInput = () => {
   const classes = useStyles();
   const inputRef = useRef(null);
-  const { fetchMovies } = useContext(MoviesContext);
+  const { fetchMedia } = useContext(MediaContext);
 
-  const onSerachClick = useCallback(
-    (e) => {
-      e.preventDefault();
-      fetchMovies(inputRef.current.value);
-    },
-    [fetchMovies]
-  );
+  const onSerachClick = (e: MouseEvent) => {
+    e.preventDefault();
+    fetchMedia({ variables: { query: inputRef.current.value } });
+  }
 
   return (
     <Paper component="form" className={classes.root}>
       <InputBase
         inputRef={inputRef}
         className={classes.input}
-        placeholder="Search for a movie"
-        inputProps={{ "aria-label": "search for a movie" }}
+        placeholder="Search for a movies and films"
+        inputProps={{ "aria-label": "search for movies and films" }}
       />
       <IconButton
         type="submit"
