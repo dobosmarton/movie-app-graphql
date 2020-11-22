@@ -74,7 +74,7 @@ const MediaDetails: FC<Props> = ({ id }) => {
           <MaterialLink
             style={{ marginLeft: 12 }}
             target="_blank"
-            href={`https://en.wikipedia.org/wiki/${transformTitle(media.title)}`}>
+            href={`http://en.wikipedia.org/wiki/${transformTitle(media.title)}`}>
             <LinkIcon height={24} />
           </MaterialLink>
         </Typography>
