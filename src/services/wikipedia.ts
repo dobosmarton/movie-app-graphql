@@ -1,7 +1,7 @@
-import { WikipediaPost } from "../types";
+import { WikipediaPost } from '../types';
 
 export default class WikipediaService {
-  static BASE_URL = ` http://en.wikipedia.org/w/api.php`;
+  static BASE_URL = ` https://en.wikipedia.org/w/api.php`;
 
   static fetchPost = (query: string): Promise<WikipediaPost[]> =>
     new Promise((resolve, reject) =>
@@ -10,9 +10,8 @@ export default class WikipediaService {
       )
         .then((response) => response.json())
         .then((result) => {
-
           if (!result.batchcomplete) {
-            return reject(new Error("There is no wikipedia post"));
+            return reject(new Error('There is no wikipedia post'));
           }
 
           resolve(result.query.pages);
